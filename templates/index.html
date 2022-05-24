@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Open source website for processing images in weird and wacky ways.">
     <link rel="shortcut icon" href="{{ url_for("static", filename="favicon.gif") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="styles.css") }}">
 </head>
 <body>
-    <form action="/scribble" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
+    <div class="doodle-form">
+        <h1>Doodler</h1>
+        <form action="/scribble" method="POST" enctype="multipart/form-data" target="_blank">
+            <input type="file" name="image" accept="image/png, image/jpeg">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
 </body>
 </html>

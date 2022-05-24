@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.doodle-form {
+    border-color: #d0d7de;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 1rem 2rem 2rem 2rem;
+}
