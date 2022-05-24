@@ -1,3 +1,3 @@
-# flask-doodler
+# doodler
 
  Web application for processing images 
