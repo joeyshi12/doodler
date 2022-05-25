@@ -28,8 +28,7 @@ def scribble():
 
 
 def __process_image(file: FileStorage) -> io.BytesIO:
-    tempdir_name = tempfile.mktemp()
-    os.mkdir(tempdir_name)
+    tempdir_name = tempfile.mkdtemp()
     file_path = os.path.join(tempdir_name, file.name)
     file.stream.seek(0)
     file.save(file_path)
@@ -45,6 +44,7 @@ def __process_image(file: FileStorage) -> io.BytesIO:
 
     if os.path.exists(file_path):
         os.remove(file_path)
+        os.rmdir(tempdir_name)
 
     return buffer
 
