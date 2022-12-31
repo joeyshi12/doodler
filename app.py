@@ -9,6 +9,7 @@ from werkzeug.datastructures import FileStorage
 
 app = Flask(__name__)
 CORS(app)
+sauce_code_pro_font = ImageFont.truetype(r"static/fonts/sauce_code_pro.ttf", 50)
 
 
 @app.route("/")
@@ -36,8 +37,7 @@ def __process_image(file: FileStorage) -> io.BytesIO:
 
     image = Image.open(file_path)
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(r"static/fonts/sauce_code_pro.ttf", 50)
-    draw.text((5, 5), "Peter Sux", font=font, align="left", fill="black")
+    draw.text((5, 5), "Peter Sux", font=sauce_code_pro_font, align="left", fill="black")
 
     buffer = io.BytesIO()
     image.save(buffer, format="PNG")
